@@ -68,7 +68,7 @@ public class Board extends JPanel implements MouseListener, ActionListener {
     	X = e.getX();
     	Y = e.getY();
 
-//    	repaint();
+    	repaint();
     }
     
     public void mouseReleased(MouseEvent e) {
