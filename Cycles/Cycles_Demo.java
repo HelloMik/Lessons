@@ -60,7 +60,7 @@ class Cycles {
 	int sum_v3(int [] digits) {
 		
 		int sum = 0;
-		int i = 0;					// Наш счетчик шагов цикла
+		int i = 0;			// Наш счетчик шагов цикла
 		int len = digits.length;	// Сколько чисел в массиве
 		
 		for (;;) {
@@ -74,14 +74,14 @@ class Cycles {
 			i++;	// Считаем шаги цикла
 		}
 		
-		return sum;		// возвращаем результат
+		return sum;	// возвращаем результат
 	}
 
 	// тоже самое, что и sum_v3, но с небольшим отличием ;)
 	int sum_v3a(int [] digits) {
 		
 		int sum = 0;
-		int i = 0;					// Наш счетчик шагов цикла
+		int i = 0;			// Наш счетчик шагов цикла
 		int len = digits.length;	// Сколько чисел в массиве
 		
 		for ( ; ; i++) {
@@ -104,7 +104,7 @@ class Cycles {
 		int len = digits.length;	// Сколько чисел в массиве
 		
 		// Гоняем цикл пока условие (i < len) верно
-		for ( ; i < len; i++) {
+		for ( /* пусто */ ; i < len; i++) {
 			
 			sum += digits[i];
 		}
@@ -189,8 +189,8 @@ class Cycles {
 		for 
 		( 
 			int i = digits.length;	/* кол-во шагов цикла = кол-ву элементов массива */
-			i-->0;					/* шагаем пока наш счетчик шагов положительный и отнимаем единицу на каждом шаге */
-			sum += digits[i]		/* а в части цикла отвечающей за шаг - мы считаем сумму :) */
+			i-->0;			/* шагаем пока наш счетчик шагов положительный и отнимаем единицу на каждом шаге */
+			sum += digits[i]	/* а в части цикла отвечающей за шаг - мы считаем сумму :) */
 		) 
 		{
 			/* а в теле цикла пусто :Р */
@@ -205,7 +205,7 @@ class Cycles {
 		
 		sum = 0;
 		
-		// а можно и так - через запятую в третей части ;)
+		// а можно и так - через запятую в третей части цикла ;)
 		
 		for ( int i = digits.length; i > 0; i--, sum += digits[i] );
 		
@@ -332,7 +332,7 @@ class Cycles {
 		return sum_v9( i, sum + digits[i], digits);
 	}
 
-	// тоже чамое что и sum_v9 только в одну строчку
+	// тоже самое что и sum_v9 только в одну строчку
 	int sum_v9a( int i, int sum, int ... digits ) {
 		return (i-- <= 0) ? sum : sum_v9( i, sum + digits[i], digits );
 	}
@@ -343,7 +343,7 @@ public class Cycles_Demo {
 	public static void main(String[] args) throws IllegalAccessException, IllegalArgumentException, InvocationTargetException {
 		// TODO Auto-generated method stub
 
-		Cycles obj = new Cycles();			// создаем объект Cycles. Это наш "представитель", через которого мы будем "общаться" с классом Cycles
+		Cycles obj = new Cycles();		// создаем объект Cycles. Это наш "представитель", через которого мы будем "общаться" с классом Cycles
 		int [] apples = { 3, 7, 1, 9, 5 };	// Пять партий яблок с разным кол-вом, т.е. массив чисел с именем apples
 		int sum;
 
