@@ -336,6 +336,15 @@ class Cycles {
 	int sum_v9a( int i, int sum, int ... digits ) {
 		return (i-- <= 0) ? sum : sum_v9( i, sum + digits[i], digits );
 	}
+	
+	// И в финале - брутальный вариант
+	// используем входной массив для хранения суммы
+	int sum_v10( int ... n ) {
+
+		for ( n[0] += n[1], n[1] = n.length; n[1]-->2; n[0] += n[n[1]] );
+		
+		return n[0];
+	}
 }
 
 public class Cycles_Demo {
@@ -363,7 +372,8 @@ public class Cycles_Demo {
 			
 //			if ( methods[i].getModifiers() == 2 ) continue;
 			if ( methods[i].getParameterCount() != 1 ) continue;
-			
+			if ( methods[i].getName().equals("sum_v10") ) continue;
+
 			System.out.format("Sum %s\t= ", methods[i].getName());
 			
 			sum = (int) methods[i].invoke((Object)obj, apples);
@@ -376,6 +386,11 @@ public class Cycles_Demo {
 
 		sum = obj.sum_v9a(apples.length, 0, apples);
 		System.out.format("Sum %s\t= %d\n", "sum_v9a", sum);
+
+		// Этот вариант изменяет наш массив - поэтому передаем ему копию		
+		sum = obj.sum_v10(apples.clone());
+		System.out.format("Sum %s\t= %d\n", "sum_v10", sum);
+
 	}
 
 }
