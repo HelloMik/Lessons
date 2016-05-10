@@ -292,6 +292,12 @@ class Cycles {
 			sum += numbers[i];
 		}
 		
+		sum = 0;
+		int i = numbers.length;
+		// или чуть иначе (обратите внимание на условие у while () )
+		while( 0<--i )
+			sum += numbers[i];
+
 		return sum;
 	}
 
